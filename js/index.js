@@ -3,6 +3,8 @@
 
 const cnvMain = document.getElementById('mainCanvas');
 const ctxMain = cnvMain.getContext('2d');
+ctxMain.fillStyle = "white";
+ctxMain.fillRect(0, 0, cnvMain.width, cnvMain.height);
 
 
 //=============TOOLBOX CONTROLS===============
@@ -156,7 +158,7 @@ function chooseBackground(){
         document.getElementById('configBackground').innerHTML =
         `<div id="contUploadBG">
             <div id="pnlUploadBG" class="pnlEntry">
-                <input type="file" id="fileUploadBG" style="display:none;">
+                <input type="file" id="fileUploadBG" style="display:none; visibility: hidden;" accept="image/png, image/jpeg">
                 <div id="pathUploadBG" class="textboxLong"><h2></h2></div>
                 <input type="button" value="Browse.." id="btnUploadBG">
             </div>
@@ -438,13 +440,31 @@ function chooseUploadBG() {
         const reader = new FileReader();
 
         reader.addEventListener("load", ()=> { // draw image on canvas
-    
-            document.getElementById('divNFT').style.maskImage = `url(${reader.result})`;
-            document.getElementById('divNFT').style.backgroundColor = `salmon`;
-            //document.getElementById('divNFT').style.background = `url(${reader.result})`;
-            //document.getElementById('divNFT').style.backgroundColor = `salmon`;
+            
+            var imgBG = document.createElement('img');
+            imgBG.src = reader.result;
+            imgBG.style.display = "none";
+            imgBG.style.visibility = "hidden";
+            document.getElementById('workArea').appendChild(imgBG);
+
+            // get first scale of image compared to canvas, then get the smaller value
+            var scaleX = cnvMain.width / imgBG.width;
+            var scaleY = cnvMain.height / imgBG.height;
+            var scale = Math.min(scaleX, scaleY);
+
+            // use the new scale to resize the image
+            var newWidth = imgBG.width * scale;
+            var newHeight = imgBG.height * scale;
+
+            // get the new origin coordinates
+            var x = (cnvMain.width - newWidth) / 2;
+            var y = (cnvMain.height - newHeight) / 2;
+
+            ctxMain.fillStyle = "white";
+            ctxMain.fillRect(0, 0, cnvMain.width, cnvMain.height);
+            ctxMain.drawImage(imgBG, x, y, newWidth, newHeight);
         
-          })
+        })
 
         reader.readAsDataURL(this.files[0]);
     }
