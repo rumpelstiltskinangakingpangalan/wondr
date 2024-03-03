@@ -1,7 +1,7 @@
 // Import the variables from variables.js
-import myPatterns from '/js/libPattern.js';
+import arrPatterns from '/js/libPattern.js';
 
 // Access the variables
-console.log(myPatterns.patCircle); // Output: value1
-console.log(myPatterns.patHeart); // Output: value2
-console.log(myPatterns.patStar); // Output: value3
+console.log(arrPatterns[0]); // Output: value1
+console.log(arrPatterns[1]); // Output: value2
+console.log(arrPatterns[2]); // Output: value3
