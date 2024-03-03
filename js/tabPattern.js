@@ -10,3 +10,24 @@ for(let a = 0; a < arrPatterns.length; a++) {
         ${arrPatterns[a]}                        
     </div>`;
 }
+
+
+//============DROPDOWN SELECTION===========
+var dropPattern = document.getElementById('dropPattern');
+
+function showOptionPattern() {
+    
+    if(this.children[2].style.display == "none") {
+        
+        this.children[2].style.display = "flex";
+        this.children[2].style.left = `${this.offsetLeft}px`;
+        this.children[2].style.top = `${this.offsetHeight + this.offsetTop + 1}px`;
+    }
+    else {
+        this.children[2].style.display = "none";
+    }
+
+}
+
+dropPattern.children[2].style.display = "none";
+dropPattern.addEventListener('click', showOptionPattern);

@@ -15,7 +15,7 @@ const myPatterns = {
 
   };
 
-  const arrPatterns = Object.values(myPatterns); // convert to data
+  const arrPatterns = Object.values(myPatterns); // convert to data array
 
   // Export the object
   export default arrPatterns;

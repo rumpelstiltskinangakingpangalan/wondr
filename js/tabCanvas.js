@@ -85,7 +85,7 @@ function appendMenu(id) {
 }
 
 //============DROPDOWN SELECTION===========
-var dropDown = document.getElementsByClassName('dropdown');
+var dropBackground = document.getElementById('dropBackground');
 
 function showOptionBackground() {
     
@@ -101,13 +101,9 @@ function showOptionBackground() {
 
 }
 
-//add event listeners to all dropdowns
-for(var i = 0; i < dropDown.length; i++) {
+dropBackground.children[2].style.display = "none";
+dropBackground.addEventListener('click', showOptionBackground);
 
-    dropDown[i].children[2].style.display = "none";
-    dropDown[i].addEventListener('click', showOptionBackground);
-
-}
 
 //===========DROPDOWN BACKGROUND=============
 
