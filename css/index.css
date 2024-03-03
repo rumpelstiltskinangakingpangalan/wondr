@@ -1,6 +1,7 @@
 * {
     margin: 0px;
     padding: 0px;    
+    font-family: "Inter";
 }
 
 h2 {
@@ -170,7 +171,6 @@ body {
 
 .pnlEntry h2 {
     color: white;
-    font-family: "Inter";
     font-weight: 500;
     font-size: 12px;
     letter-spacing: 1px;
@@ -223,7 +223,6 @@ option {
  
 .dropdown h2{
     color: white;
-    font-family: "Inter";
     font-weight: 600;
     font-size: 12px;
     letter-spacing: 1px;
@@ -239,7 +238,19 @@ option {
     margin-right: 6px;
 }
 
-.dropOption {
+.dropOptionVerti {
+    z-index: 1;
+    width: 210px;
+    height: auto;
+    max-height: 160px;
+    overflow-y: auto;
+    border-radius: 5px;
+    position: absolute;
+    background-color: #1E222B;
+    display: none;
+}
+
+.dropOptionHori {
     z-index: 1;
     width: 210px;
     height: auto;
@@ -256,7 +267,6 @@ option {
     height: 40px;
     display: flex;
     color: white;
-    font-family: "Inter";
     font-weight: 600;
     font-size: 12px;
     letter-spacing: 1px;
@@ -272,6 +282,25 @@ option {
 .optBG:hover {
     background-color: #9DAFDB;
 }
+
+.optPattern {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    letter-spacing: 1px;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    -webkit-user-select: none; 
+    -moz-user-select: none;
+    -ms-user-select: none; 
+    user-select: none; 
+}
+
+.optPattern:hover {
+    background-color: #9DAFDB;
+}
+
 
 .textbox {
     width: 64px;
@@ -343,7 +372,6 @@ option {
 
 .textboxLong h2 {
     color: white;
-    font-family: "Inter";
     font-size: 12px;
     margin-top: auto;
     margin-bottom: auto;
@@ -484,7 +512,6 @@ option {
     border: none;
     background-color: transparent;
     color: white;
-    font-family: "Inter";
     font-size: 12px;
     font-weight: 400;
     text-align: center;
