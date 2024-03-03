@@ -1,7 +1,12 @@
 // Import the variables from variables.js
 import arrPatterns from '/js/libPattern.js';
 
-// Access the variables
-console.log(arrPatterns[0]); // Output: value1
-console.log(arrPatterns[1]); // Output: value2
-console.log(arrPatterns[2]); // Output: value3
+// Access the variables and add as options
+var selectPattern = document.getElementById('selectPattern');
+
+for(let a = 0; a < arrPatterns.length; a++) {
+    selectPattern.innerHTML += 
+    `<div class="optPattern">
+        ${arrPatterns[a]}                        
+    </div>`;
+}
