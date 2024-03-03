@@ -1,5 +1,5 @@
 // Import the variables from variables.js
-import myPatterns from './js/libPattern.js';
+import myPatterns from 'js/libPattern.js';
 
 // Access the variables
 console.log(myPatterns.patCircle); // Output: value1
