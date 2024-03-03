@@ -19,6 +19,7 @@
         <div id="bodyUI">
             <div id="toolbox">
                 <div id="toolCanvas" class="tool"><img src="icons/canvas.svg"></div>
+                <div id="toolPattern" class="tool"><img src="icons/pattern.svg"></div>
                 <div id="toolUpload" class="tool"><img src="icons/upload.svg"></div>
                 <div id="toolSticker" class="tool"><img src="icons/sticker.svg"></div>
                 <div id="toolText" class="tool"><img src="icons/text.svg"></div>
@@ -26,37 +27,124 @@
                 <div id="toolExport" class="tool"><img src="icons/export.svg"></div>
             </div>
             <div id="toolmenu">
-                <div id="menuCanvas">
+                
+                <div class="menu" id="menuCanvas" style="display: none;">
                     
                     <div class="pnlBox" id="pnlBackground">
-                        
+                                
                         <div class="pnlEntry">
-                            <div class="btnReset"><img src="buttons/btnReset.svg"></div>
+                                    
                             <div id="dropBackground" class="dropdown">
-                           
                                 <h2>Background</h2>
                                 <img src="buttons/btnArrow.svg">
-                                
                                 <div id="selectBackground" class="dropOption">
                                     <div class="optBG">Solid Color</div>
                                     <div class="optBG">Gradient Color</div>
                                     <div class="optBG">Upload Image</div>
                                 </div>
-                                
                             </div>
-                    
-                        </div>
-
-                        <div id="configBackground">
                             
                         </div>
+        
+                        <div id="configBackground">
+                            <div id="contSolid" class="content">
+                                <div id="pnlSolidColor" class="pnlEntry">
+                                    <h2>Color</h2>
+                                    <input type="text" class="textbox" id="txtSolidColor" value="#FFFFFF">
+                                    <div id="pckSolidColor" class="thumbPicker"></div>
+                                </div>
+                            </div>
+                            <div id="contGradient" class="content">
+                                <div id="pnlGradient1" class="pnlEntry">
+                                    <h2>Color 1</h2>
+                                    <input type="text" class="textbox" id="txtGradient1" value="#FFFFFF">
+                                    <div id="pckGradient1" class="thumbPicker"></div>
+                                </div>
+                    
+                                <div id="pckSwap"><img src="buttons/btnSwap.svg"></div>
+                            
+                                <div id="pnlGradient2" class="pnlEntry">
+                                    <h2>Color 2</h2>
+                                    <input type="text" class="textbox" id="txtGradient2" value="#A9AEFF">
+                                    <div id="pckGradient2" class="thumbPicker"></div>
+                                </div>
+                    
+                                <div id="pnlGradientRotation" class="pnlEntry">
+                                    <h2>Rotation</h2>
+                                    <input type="range" min="0" max="180" value="0" class="slider" id="rngGradientRotation" step="15">
+                                    <input type="number" id="txtGradientRotation" class="textboxMini" value="0" min="0" max="180">
+                                </div>
+                    
+                                <div id="pnlGradientScale" class="pnlEntry">
+                                    <h2>Scale</h2>
+                                    <input type="range" min="1" max="100" value="1" class="slider" id="rngGradientScale">
+                                    <input type="number" id="txtGradientScale" class="textboxMini" value="1" min="1" max="100">
+                                </div>
+                            </div>
+                            <div id="contUploadBG" class="content">
+                                <div id="pnlUploadBG" class="pnlEntry">
+                                    <input type="file" id="fileUploadBG" style="display:none; visibility: hidden;" accept="image/png, image/jpeg">
+                                    <div id="pathUploadBG" class="textboxLong"><h2></h2></div>
+                                    <input type="button" value="Upload" id="btnUploadBG">
+                                </div>
+                                <div id="pnlUploadBGScale" class="pnlEntry" style="display:none; visibility:hidden;">
+                                    <h2>Scale</h2>
+                                    <input type="range" min="0" max="100" value="0" class="slider" id="rngBGScale">
+                                    <input type="number" id="txtBGScale" class="textboxMini" value="0" min="0" max="100">
+                                </div>
+                                <div id="pnlUploadBGHori" class="pnlEntry" style="display:none; visibility:hidden;">
+                                    <h2>Horizontal</h2>
+                                    <input type="range" min="-10" max="10" value="0" class="slider" id="rngBGHori">
+                                    <input type="number" id="txtBGHori" class="textboxMini" value="0" min="-10" max="10">
+                                </div>
+                                <div id="pnlUploadBGVerti" class="pnlEntry" style="display:none; visibility:hidden;">
+                                    <h2>Vertical</h2>
+                                    <input type="range" min="-10" max="10" value="0" class="slider" id="rngBGVerti">
+                                    <input type="number" id="txtBGVerti" class="textboxMini" value="0" min="-10" max="10">
+                                </div>
+                            </div>
+                        </div>
+        
                     </div>
+        
                     <div class="breakLine"></div>
-                   
+        
+                </div>
+
+                <div class="menu" id="menuPattern" style="display: none;">
+                    
+                    <div class="pnlBox" id="pnlPattern">
+                                
+                        <div class="pnlEntry">
+                                    
+                            <div id="dropPattern" class="dropdown">
+                                <h2>Pattern</h2>
+                                <img src="buttons/btnArrow.svg">
+                                <div id="selectPattern" class="dropOption">
+                                    <div class="optBG">
+                                        Solid Color
+
+                                    </div>
+                                    
+                                </div>
+                            </div>
+        
+                        </div>
+        
+                        <div id="configPattern">
+                                    
+                        </div>
+        
+                    </div>
+        
+                    <div class="breakLine"></div>
+        
                 </div>
             </div>
             <div id="workArea">
+                <img src="" id="imgBG" style="display: none; visibility: hidden;">
                 <canvas id="mainCanvas" width="1080" height="1080"></canvas>
+                
             </div>
             
             <div class="border"></div>
@@ -73,6 +161,7 @@
         <div class="footer"></div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/pickr.min.js"></script>
-    <script src="js/index.js"></script>
+    <script src="js/tabCanvas.js"></script>
+    <script src="js/tabPattern.js" type="module"></script>
 </body>
 </html>

@@ -19,6 +19,28 @@ img {
     user-select: none; /* Standard syntax */
 }
 
+
+input[type=number]::-webkit-inner-spin-button,  /* hide number textbox increment / decrement buttons*/
+input[type=number]::-webkit-outer-spin-button { /* hide number textbox increment / decrement buttons*/
+  -webkit-appearance: none; 
+}
+
+input[type=number] {  /* hide number textbox increment / decrement buttons*/
+  -moz-appearance: textfield;
+}
+
+
+::-moz-selection { /* Code for Firefox change color of text selections*/ 
+   
+    background: #9DAFDB;
+  }
+  
+  ::selection { /*change color of text selections */ 
+
+    background: #9DAFDB;
+  }
+
+
 body {
     display: flex;
     background-color: #1E222B;
@@ -64,14 +86,13 @@ body {
 
 .tool img{
     margin: auto;
-    width: 60%;
-    height: 60%;
+   
     cursor: pointer;
 }
 
 #toolmenu {
-    width: 250px;
-    min-width: 250px;
+    width: 260px;
+    min-width: 280px;
     height: 100%;
     background-color: #394257;
     visibility: hidden;
@@ -127,12 +148,10 @@ body {
 }
 
 
-#menuCanvas {
+.menu {
     width: 100%;
     height: 100%;
 }
-
-
 
 .pnlBox {
     display: flex;
@@ -159,6 +178,9 @@ body {
     margin-bottom: auto;
 }
 
+.content {
+    display: none;
+}
 
 .btnReset {
     cursor: pointer;
@@ -176,7 +198,7 @@ body {
 }
 
 .dropdown {
-    width: 166px;
+    width: 210px;
     height: 32px;
     border: 1px solid #647499;
     border-radius: 99px;
@@ -188,9 +210,17 @@ body {
     cursor: pointer;
     outline: none;
     display: flex;
-    
 }
 
+/*
+option {
+    height: 500px;
+    background-color: #1E222B;
+    outline: none;
+    border-radius: 3px;
+}
+*/
+ 
 .dropdown h2{
     color: white;
     font-family: "Inter";
@@ -211,7 +241,7 @@ body {
 
 .dropOption {
     z-index: 1;
-    width: 168px;
+    width: 210px;
     height: auto;
     max-height: 160px;
     overflow-y: auto;
@@ -233,10 +263,10 @@ body {
     cursor: pointer;
     align-items: center;
     justify-content: center;
-    -webkit-user-select: none; /* Safari */
-    -moz-user-select: none; /* Firefox */
-    -ms-user-select: none; /* IE10+/Edge */
-    user-select: none; /* Standard syntax */
+    -webkit-user-select: none; 
+    -moz-user-select: none;
+    -ms-user-select: none; 
+    user-select: none; 
 }
 
 .optBG:hover {
@@ -244,8 +274,8 @@ body {
 }
 
 .textbox {
-    width: 66px;
-    height: 20px;
+    width: 64px;
+    height: 24px;
     outline: none;
     margin-top: auto;
     margin-bottom: auto;
@@ -270,10 +300,9 @@ body {
 }
 
 .textboxMini {
-    width: 20px;
-    height: 20px;
+    width: 28px;
+    height: 24px;
     outline: none;
-    border-radius: 3px;
     margin-top: auto;
     margin-bottom: auto;
     color: white;
@@ -282,12 +311,22 @@ body {
     font-weight: 500;
     cursor: default;
     border: none;
+    border-bottom: 1px solid transparent;
     background-color: transparent;
 }
 
+.textboxMini:hover {
+    border-bottom: 1px solid #647499;
+}
+
+.textboxMini:focus {
+    border-bottom: 1px solid #647499;
+}
+
+
 .textboxLong {
-    width: 134px;
-    height: 20px;
+    width: 120px;
+    height: 24px;
     outline: none;
     margin-top: auto;
     margin-bottom: auto;
@@ -296,10 +335,10 @@ body {
     margin-right: 8px;
     display: flex;
     overflow: hidden;
-    padding-left: 4px;
-    padding-right: 4px;
-    border: 1px solid #515E7B;
-    background-color: transparent;
+    border: 1px solid #515E7B; 
+    border: transparent; 
+    /*
+    background-color: transparent; */
 }
 
 .textboxLong h2 {
@@ -308,13 +347,15 @@ body {
     font-size: 12px;
     margin-top: auto;
     margin-bottom: auto;
-    font-weight: 400;
+    font-weight: 500;
+    text-overflow: clip;
+    white-space: nowrap;
 }
 
 .thumbPicker {
     outline: none;
-    width: 20px;
-    height: 20px;
+    width: 24px;
+    height: 24px;
     border-radius: 3px;
     background-color: white;
     margin-top: auto;
@@ -325,8 +366,8 @@ body {
 
 #pckSwap {
     cursor: pointer;
-    width: 20px;
-    height: 20px;
+    width: 22px;
+    height: 22px;
     display: flex;
     margin-top: auto;
     margin-bottom: auto;
@@ -335,12 +376,13 @@ body {
     margin-left: auto;
     transition: border .1s;
     position: absolute;
-    left: 210px;
+    left: 222px;
     top: 130px;
 }
 
 #pckSwap:hover {
     border: 1px solid #647499;
+    
 }
 
 
@@ -351,7 +393,10 @@ body {
 #pckSwap img {
     scale: 1;
     margin: auto;
-    transition: .1s;
+    transition: .1s;   
+}
+
+#pckSwap:hover img {
     filter: saturate(0) brightness(2);
 }
 
@@ -370,7 +415,7 @@ body {
   .slider {
     -webkit-appearance: none;  
     appearance: none;
-    width: 66px; 
+    width: 64px; 
     height: 1px; 
     border-radius: 99px;
     background: #647499; 
@@ -407,7 +452,7 @@ body {
 
   #btnUploadBG {
     width: 66px;
-    height: 20px;
+    height: 22px;
     border: none;
     border-radius: 3px;
     background-color: #515E7B;
@@ -421,3 +466,85 @@ body {
     transition: .1s background-color;
     cursor: pointer;
   }
+
+  #btnUploadBG:hover {
+    background-color: #647499;
+  }
+
+  .numbox {
+    width: 100%;
+    height: 22px;
+    outline: none;
+    margin-top: auto;
+    margin-bottom: auto;
+    cursor: default;
+    border-radius: 3px;
+    display: flex;
+    overflow: hidden;
+    border: none;
+    background-color: transparent;
+    color: white;
+    font-family: "Inter";
+    font-size: 12px;
+    font-weight: 400;
+    text-align: center;
+
+    }
+
+  .divNumText {
+    width: 74px;
+    height: 22px;
+    border-radius: 3px;
+    border: 1px solid #515E7B;
+    display: flex;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: auto;
+   }
+
+   .divNumText:hover {
+        border: 1px solid #647499;
+   }
+
+
+.btnAddPoints {
+    width: 22px;
+    min-width: 22px;
+    height: 22px;
+    background-color: #515E7B;
+    color: white;
+    outline: none;
+    border: none;
+    transition: .1s background-color;
+    margin-left: 1px;
+}
+
+.btnAddPoints:hover {
+    background-color: #647499;
+}
+
+.btnAddPoints:active {
+    background-color: #515E7B;
+}
+
+.btnMinusPoints {
+    width: 22px;
+    min-width: 22px;
+    height: 22px;
+    background-color: #515E7B;
+    color: white;
+    outline: none;
+    border: none;
+    transition: .1s background-color;
+    margin-left: 1px;
+}
+
+.btnMinusPoints:hover {
+    background-color: #647499;
+}
+
+.btnMinusPoints:active {
+    background-color: #515E7B;
+}
+
+
