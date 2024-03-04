@@ -8,12 +8,14 @@ var selectPattern = document.getElementById('selectPattern');
 for(let a = 0; a < arrPatterns.length; a++) {
     selectPattern.innerHTML += 
     `<div class="optPattern">
-        ${arrPatterns[a]}                        
+        <div class="hoverPattern">
+            ${arrPatterns[a]}
+        </div>                      
     </div>`;
 }
 
 
-//============DROPDOWN SELECTION===========
+//============DROPDOWN SELECTION==============
 var dropPattern = document.getElementById('dropPattern');
 
 function showOptionPattern() {
@@ -32,11 +34,3 @@ function showOptionPattern() {
 
 dropPattern.children[2].style.display = "none";
 dropPattern.addEventListener('click', showOptionPattern);
-
-
-//============PATTERN CHANGE COLOR========
-var refPattern = document.querySelectorAll('.refPattern');
-
-for (let a=0; a < refPattern.length; a++) {
-    refPattern[a].children[0].setAttribute('fill', 'white');
-}
