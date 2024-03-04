@@ -27,6 +27,9 @@ function showOptionPattern() {
         this.children[2].style.top = `${this.offsetHeight + this.offsetTop + 1}px`;
 
         document.onclick = function(e) {
+
+            console.log(e.target.id, this.children[2].id)
+            
             if(e.target.id !== this.children[2].id) {
                 this.children[2].style.display = "none";
             }
