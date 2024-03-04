@@ -21,25 +21,21 @@ var dropPattern = document.getElementById('dropPattern');
 
 function hideOptionPattern(e) {
 
+    if(e.target.id !== dropPattern.children[2].id || e.target.id === dropPattern) {
+        dropPattern.children[2].style.display = "none";
+    }
+
 }
 
 function showOptionPattern() {
     
     if(dropPattern.children[2].style.display == "none") {
         
-        document.onclick = function(e) {
+        dropPattern.children[2].style.display = "flex";
+        dropPattern.children[2].style.left = `${dropPattern.offsetLeft}px`;
+        dropPattern.children[2].style.top = `${dropPattern.offsetHeight + dropPattern.offsetTop + 1}px`;
 
-            console.log(e.target.id, dropPattern.children[2].id)
-
-            if(e.target.id !== dropPattern.children[2].id) {
-                dropPattern.children[2].style.display = "none";
-            }
-            else {
-                dropPattern.children[2].style.display = "flex";
-                dropPattern.children[2].style.left = `${dropPattern.offsetLeft}px`;
-                dropPattern.children[2].style.top = `${dropPattern.offsetHeight + dropPattern.offsetTop + 1}px`;
-            }
-        }
+        document.addEventListener('click', hideOptionPattern);
         
     }
     else {
