@@ -28,7 +28,7 @@ function showOptionPattern() {
 
         document.onclick = function(e) {
 
-            console.log(this.children[2].id)
+            console.log(this.children[2])
 
             //if(e.target.id !== this.children[2].id) {
             //    this.children[2].style.display = "none";
