@@ -1,7 +1,8 @@
 // Import the variables from variables.js
 import arrPatterns from '/js/libPattern.js';
 
-// Access the variables and add as options
+
+//=============APPEND ALL VECTORS=============
 var selectPattern = document.getElementById('selectPattern');
 
 for(let a = 0; a < arrPatterns.length; a++) {
@@ -31,3 +32,6 @@ function showOptionPattern() {
 
 dropPattern.children[2].style.display = "none";
 dropPattern.addEventListener('click', showOptionPattern);
+
+
+//============PATTERN 
