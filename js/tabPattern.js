@@ -19,16 +19,18 @@ for(let a = 0; a < arrPatterns.length; a++) {
 var dropPattern = document.getElementById('dropPattern');
 
 function showOptionPattern() {
+
+    var a = this;
     
-    if(this.children[2].style.display == "none") {
+    if(a.children[2].style.display == "none") {
         
-        this.children[2].style.display = "flex";
-        this.children[2].style.left = `${this.offsetLeft}px`;
-        this.children[2].style.top = `${this.offsetHeight + this.offsetTop + 1}px`;
+        a.children[2].style.display = "flex";
+        a.children[2].style.left = `${a.offsetLeft}px`;
+        a.children[2].style.top = `${a.offsetHeight + this.offsetTop + 1}px`;
 
         document.onclick = function(e) {
 
-            console.log(this.children[2])
+            console.log(a.children[2])
 
             //if(e.target.id !== this.children[2].id) {
             //    this.children[2].style.display = "none";
