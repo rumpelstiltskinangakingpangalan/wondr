@@ -30,11 +30,9 @@ function showOptionPattern() {
 
         document.onclick = function(e) {
 
-            console.log(a.children[2])
-
-            //if(e.target.id !== this.children[2].id) {
-            //    this.children[2].style.display = "none";
-            //}
+            if(e.target.id !== a.children[2].id) {
+                a.children[2].style.display = "none";
+            }
         }
     }
     else {
