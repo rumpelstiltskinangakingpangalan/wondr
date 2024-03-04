@@ -212,15 +212,6 @@ body {
     display: flex;
 }
 
-/*
-option {
-    height: 500px;
-    background-color: #1E222B;
-    outline: none;
-    border-radius: 3px;
-}
-*/
- 
 .dropdown h2{
     color: white;
     font-weight: 600;
@@ -297,10 +288,11 @@ option {
     user-select: none; 
 }
 
+/*
 .optPattern:hover {
     background-color: #9DAFDB;
 }
-
+*/
 
 .textbox {
     width: 64px;
@@ -366,8 +358,6 @@ option {
     overflow: hidden;
     border: 1px solid #515E7B; 
     border: transparent; 
-    /*
-    background-color: transparent; */
 }
 
 .textboxLong h2 {
