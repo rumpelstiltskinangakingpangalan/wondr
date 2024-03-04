@@ -34,4 +34,9 @@ dropPattern.children[2].style.display = "none";
 dropPattern.addEventListener('click', showOptionPattern);
 
 
-//============PATTERN 
+//============PATTERN CHANGE COLOR========
+var refPattern = document.querySelectorAll('.refPattern');
+
+for (let a=0; a < refPattern.length; a++) {
+    refPattern[a].children[0].setAttribute('fill', 'white');
+}
