@@ -15,30 +15,33 @@ for(let a = 0; a < arrPatterns.length; a++) {
 }
 
 
+
 //============DROPDOWN SELECTION==============
 var dropPattern = document.getElementById('dropPattern');
 
-function showOptionPattern() {
+function hideOptionPattern(e) {
 
-    var a = this;
+}
+
+function showOptionPattern() {
     
-    if(a.children[2].style.display == "none") {
+    if(dropPattern.children[2].style.display == "none") {
         
-        a.children[2].style.display = "flex";
-        a.children[2].style.left = `${a.offsetLeft}px`;
-        a.children[2].style.top = `${a.offsetHeight + this.offsetTop + 1}px`;
+        dropPattern.children[2].style.display = "flex";
+        dropPattern.children[2].style.left = `${dropPattern.offsetLeft}px`;
+        dropPattern.children[2].style.top = `${dropPattern.offsetHeight + dropPattern.offsetTop + 1}px`;
 
         document.onclick = function(e) {
 
-            console.log(e.target.id, a.children[2].id)
+            console.log(e.target.id, dropPattern.children[2].id)
 
-            if(e.target.id !== a.children[2].id) {
-                a.children[2].style.display = "none";
+            if(e.target.id !== dropPattern.children[2].id) {
+                dropPattern.children[2].style.display = "none";
             }
         }
     }
     else {
-        this.children[2].style.display = "none";
+        dropPattern.children[2].style.display = "none";
     }
 
 }
