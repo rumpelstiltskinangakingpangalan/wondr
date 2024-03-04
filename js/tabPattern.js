@@ -28,11 +28,11 @@ function showOptionPattern() {
 
         document.onclick = function(e) {
 
-            console.log(e.target.id, this.children[2].id)
-            
-            if(e.target.id !== this.children[2].id) {
-                this.children[2].style.display = "none";
-            }
+            console.log(this.children[2].id)
+
+            //if(e.target.id !== this.children[2].id) {
+            //    this.children[2].style.display = "none";
+            //}
         }
     }
     else {
