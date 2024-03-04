@@ -35,7 +35,7 @@ function showOptionPattern() {
         dropPattern.children[2].style.left = `${dropPattern.offsetLeft}px`;
         dropPattern.children[2].style.top = `${dropPattern.offsetHeight + dropPattern.offsetTop + 1}px`;
 
-        document.addEventListener('click', hideOptionPattern);
+        //document.addEventListener('click', hideOptionPattern);
         
     }
     else {
