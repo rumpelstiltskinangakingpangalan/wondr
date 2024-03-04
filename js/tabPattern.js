@@ -27,10 +27,6 @@ function showOptionPattern() {
     
     if(dropPattern.children[2].style.display == "none") {
         
-        dropPattern.children[2].style.display = "flex";
-        dropPattern.children[2].style.left = `${dropPattern.offsetLeft}px`;
-        dropPattern.children[2].style.top = `${dropPattern.offsetHeight + dropPattern.offsetTop + 1}px`;
-
         document.onclick = function(e) {
 
             console.log(e.target.id, dropPattern.children[2].id)
@@ -38,7 +34,13 @@ function showOptionPattern() {
             if(e.target.id !== dropPattern.children[2].id) {
                 dropPattern.children[2].style.display = "none";
             }
+            else {
+                dropPattern.children[2].style.display = "flex";
+                dropPattern.children[2].style.left = `${dropPattern.offsetLeft}px`;
+                dropPattern.children[2].style.top = `${dropPattern.offsetHeight + dropPattern.offsetTop + 1}px`;
+            }
         }
+        
     }
     else {
         dropPattern.children[2].style.display = "none";
