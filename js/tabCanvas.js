@@ -84,26 +84,20 @@ function appendMenu(id) {
     document.getElementById('menu' + id).style.display = "block";
 }
 
-//============DROPDOWN SELECTION===========
-var dropBackground = document.getElementById('dropBackground');
+//=============HIDE ALL DROPDOWN SELECTIONS=============
 
-function showOptionBackground() {
-    
-    if(this.children[2].style.display == "none") {
-        
-        this.children[2].style.display = "block";
-        this.children[2].style.left = `${this.offsetLeft}px`;
-        this.children[2].style.top = `${this.offsetHeight + this.offsetTop + 1}px`;
-    }
-    else {
-        this.children[2].style.display = "none";
+function hideAllOptions() {
+    var dropOptionVerti = document.querySelectorAll('.dropOptionVerti');
+    var dropOptionHori = document.querySelectorAll('.dropOptionHori');
+
+    for(var a = 0; a < dropOptionVerti.length; a++) {
+        dropOptionVerti[a].style.display = "none";
     }
 
+    for(var a = 0; a < dropOptionHori.length; a++) {
+        dropOptionHori[a].style.display = "none";
+    }
 }
-
-dropBackground.children[2].style.display = "none";
-dropBackground.addEventListener('click', showOptionBackground);
-
 
 //===========DROPDOWN BACKGROUND=============
 
@@ -656,6 +650,47 @@ function chooseUploadBG() {
 }   
 
 
+//=============CHECK DOCUMENT CLICKS TO HIDE ===========
+
+function checkClicks(e) {
+
+    var clicked = e.target;
+    var dropBackground = document.getElementById('dropBackground');
+    var dropPattern = document.getElementById('dropPattern');
+
+    if (clicked.id === "dropBackground" || clicked.parentElement.id === "dropBackground") {
+        
+        if(dropBackground.children[2].style.display == "none") {
+        
+            dropBackground.children[2].style.display = "block";
+            dropBackground.children[2].style.left = `${dropBackground.offsetLeft}px`;
+            dropBackground.children[2].style.top = `${dropBackground.offsetHeight + dropBackground.offsetTop + 1}px`;
+        }
+        else {
+            hideAllOptions();
+        }
+    }
+
+    else if (clicked.id === "dropPattern" || clicked.parentElement.id === "dropPattern") {
+
+        if(dropPattern.children[2].style.display == "none") {
+        
+            dropPattern.children[2].style.display = "flex";
+            dropPattern.children[2].style.left = `${dropPattern.offsetLeft}px`;
+            dropPattern.children[2].style.top = `${dropPattern.offsetHeight + dropPattern.offsetTop + 1}px`;
+        }
+        else {
+            hideAllOptions();
+        }
+    
+    }
+
+    else {
+        hideAllOptions();
+    }
+
+}
+document.addEventListener('click', checkClicks);
 
 
 
