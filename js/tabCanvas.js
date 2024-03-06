@@ -94,9 +94,9 @@ function hideAllOptions() {
         dropOptionVerti[a].style.display = "none";
     }
 
-    for(var a = 0; a < dropOptionHori.length; a++) {
-        dropOptionHori[a].style.display = "none";
-    }
+    //for(var a = 0; a < dropOptionHori.length; a++) {
+    //    dropOptionHori[a].style.display = "none";
+    //}
 }
 
 
