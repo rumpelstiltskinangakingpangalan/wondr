@@ -273,7 +273,7 @@ body {
 }
 
 .optBG:hover {
-    background-color: rgba(175, 175, 219, .2);
+    background-color: #252C3D;
 }
 
 .optPattern {
@@ -301,7 +301,7 @@ body {
 }
 
 .hoverPattern:hover {
-    background-color: rgba(175, 175, 219, .2);
+    background-color: #252C3D;
 }
 
 .refPattern {
