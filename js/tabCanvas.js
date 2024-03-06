@@ -86,7 +86,6 @@ function appendMenu(id) {
 
 //=============HIDE ALL DROPDOWN SELECTIONS=============
 
-/*
 function hideAllOptions() {
     var dropOptionVerti = document.querySelectorAll('.dropOptionVerti');
     var dropOptionHori = document.querySelectorAll('.dropOptionHori');
@@ -99,7 +98,7 @@ function hideAllOptions() {
         dropOptionHori[a].style.display = "none";
     }
 }
-*/
+
 
 //===========DROPDOWN BACKGROUND=============
 
