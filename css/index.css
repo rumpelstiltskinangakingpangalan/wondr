@@ -273,7 +273,7 @@ body {
 }
 
 .optBG:hover {
-    background-color: #9DAFDB;
+    background-color: rgba(175, 175, 219, .2);
 }
 
 .optPattern {
@@ -301,7 +301,7 @@ body {
 }
 
 .hoverPattern:hover {
-    background-color: #9DAFDB;
+    background-color: rgba(175, 175, 219, .2);
 }
 
 .refPattern {
@@ -415,7 +415,6 @@ body {
 
 #pckSwap:hover {
     border: 1px solid #647499;
-    
 }
 
 
