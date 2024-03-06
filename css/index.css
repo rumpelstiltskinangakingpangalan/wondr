@@ -85,7 +85,7 @@ body {
     cursor: pointer;
 }
 
-.tool img{
+.tool svg{
     margin: auto;
    
     cursor: pointer;
@@ -221,7 +221,7 @@ body {
     cursor: pointer;
 }
 
-.dropdown img{
+.dropdown svg{
     width: 8px;
     height: 6px;
     margin-top: auto;
@@ -423,13 +423,13 @@ body {
     border: 1px solid #647499;
 }
 
-#pckSwap img {
+#pckSwap svg {
     scale: 1;
     margin: auto;
     transition: .1s;   
 }
 
-#pckSwap:hover img {
+#pckSwap:hover svg {
     filter: saturate(0) brightness(2);
 }
 
