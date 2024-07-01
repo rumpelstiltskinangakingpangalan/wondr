@@ -73,8 +73,14 @@ function showSerif() {
                             document.fonts.add(font);
 
                             //when the font loaded
-                            font.load().then(function() {
-                                //console.log(loadedFont)
+                            document.fonts.ready.then((fontFaceSet) => {
+                                // Any operation that needs to be done only after all used fonts
+                                // have finished loading can go here.
+                                //const fontFaces = [...fontFaceSet];
+                                //console.log(fontFaces);
+                                // some fonts may still be unloaded if they aren't used on the site
+                                //console.log(fontFaces.map((f) => f.status));
+
                                 append += `<div class="pnlBoxFont" data-font="${serif[a].name}"><h2 style="font-family: ${serif[a].name}">${serif[a].name}</h2></div>`
                             })
                             .catch(function(error) {
