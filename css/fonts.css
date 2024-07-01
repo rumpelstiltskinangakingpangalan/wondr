@@ -1,0 +1,106 @@
+#breaklineTrackFonts {
+    background-color: #3F4961;
+    width: 240px;
+    height: 1px;
+    margin-left: 16px;
+    margin-right: auto;
+    margin-bottom: .5em;
+}
+
+#breaklineThumbFonts {
+    background-color: #6885CC;
+    width: 33%;
+    height: 1px;
+    translate: 0%;
+    transition: .2s;
+}
+
+#fontCategory {
+    display: flex;
+    height: 40px;
+    width: 240px;
+    margin-left: 16px;
+    margin-right: auto;
+    margin-bottom: .5em;
+}
+
+.fontSelect {
+    width: 33%;
+    display: flex;
+    cursor: pointer;
+}
+
+.fontSelect h2 {
+    font-size: 13px;
+    color: #647499;
+    margin: auto;
+    transition: .2s;
+}
+
+.fontSelect:nth-child(1) h2 {
+    color: white;
+}
+
+#tabFontCategory {
+    width: 240px;
+    min-width: 240px;
+    max-width: 240px;
+    height: auto;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+#tabSliderFont {
+    width: auto;
+    height: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    transition: .2s;
+}
+
+.tabFonts {
+    width: 240px;
+    min-width: 240px;
+    max-width: 240px;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.pnlBoxFont {
+    width: 238px;
+    height: 40px;
+    margin-right: auto;
+    border-radius: 9px;
+    background-color: #343C4F;
+    border: 1px solid #3f4961;
+    overflow: hidden;
+    transition: .1s;
+    margin-bottom: .5em;
+    display: flex;
+}
+
+.pnlBoxFont h2 {
+    color: white;
+    margin: auto;
+    font-weight: 400;
+    font-size: 16px;
+    
+}
+
+.fontPopular {
+    width: 240px;
+    min-width: 240px;
+    height: 40px;
+    margin-top: 1em;
+    margin-bottom: .5em;
+    display: flex;
+}
+
+.fontPopular h2{
+    color: white;
+    margin-top: auto;
+    margin-bottom: auto;
+    font-size: 13px;
+}
+

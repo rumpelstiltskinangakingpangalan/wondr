@@ -1,0 +1,39 @@
+
+.configWrap {
+    display: flex;
+    flex-wrap: wrap;
+    width: 240px;
+    justify-content: space-between;
+}
+
+.pnlBoxThumb {
+    width: 112px;
+    height: 112px;
+    border-radius: 9px;
+    margin-top: .5em;
+    margin-bottom: .5em;
+    display: flex;
+    cursor: pointer;
+    padding: 4px;
+    box-sizing: border-box;
+    border: 1px solid #3F4961;
+}
+
+.pnlBoxThumb img {
+    width: 100%;
+    height: 100%;
+    border-radius: 7px;
+    object-fit:cover;
+    filter: saturate(.8) blur(.2px);
+    image-rendering: smooth;  
+}
+
+.pnlBoxThumb svg {
+    width: 80%;
+    height: 80%;
+    object-fit:cover;
+    margin:auto;
+    
+}
+
+
