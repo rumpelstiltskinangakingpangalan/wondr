@@ -73,13 +73,13 @@ function showSerif() {
                             document.fonts.add(font);
 
                             //when the font loaded
-                            //font.load().then(function(loadedFont) {
+                            font.load().then(function(loadedFont) {
                                 //console.log(loadedFont)
                                 append += `<div class="pnlBoxFont" data-font="${serif[a].name}"><h2 style="font-family: ${serif[a].name}">${serif[a].name}</h2></div>`
-                            //})
-                            //.catch(function(error) {
-                                //console.log(error.code)
-                            //})
+                            })
+                            .catch(function(error) {
+                                console.log(error.code)
+                            })
                             
                         }
                         /*
